@@ -1,4 +1,4 @@
-package com.volmit.gloss.api.context;
+package com.volmit.gloss.api.binder;
 
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;

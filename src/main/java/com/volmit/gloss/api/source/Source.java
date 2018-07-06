@@ -1,5 +1,7 @@
 package com.volmit.gloss.api.source;
 
+import org.bukkit.Location;
+
 import com.volmit.gloss.api.capture.VC;
 import com.volmit.gloss.api.context.Context;
 import com.volmit.gloss.util.Updateable;
@@ -18,4 +20,6 @@ public interface Source extends Updateable
 	public SourceType getType();
 
 	public Context getRelatedContext();
+
+	public Location getLocation();
 }

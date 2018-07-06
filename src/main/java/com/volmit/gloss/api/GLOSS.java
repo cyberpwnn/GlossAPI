@@ -2,14 +2,15 @@ package com.volmit.gloss.api;
 
 import org.bukkit.plugin.Plugin;
 
+import com.volmit.gloss.api.binder.Binder;
 import com.volmit.gloss.api.capture.Capture;
 import com.volmit.gloss.api.capture.VC;
-import com.volmit.gloss.api.context.Binder;
-import com.volmit.gloss.api.context.CompiledIntent;
 import com.volmit.gloss.api.context.Context;
-import com.volmit.gloss.api.context.Intent;
 import com.volmit.gloss.api.context.Node;
+import com.volmit.gloss.api.context.NodeActionListener;
 import com.volmit.gloss.api.display.DisplayRenderer;
+import com.volmit.gloss.api.intent.CompiledIntent;
+import com.volmit.gloss.api.intent.Intent;
 import com.volmit.gloss.api.source.Source;
 import com.volmit.gloss.api.source.SourceType;
 import com.volmit.gloss.library.CaptureLibrary;
@@ -29,10 +30,10 @@ public class GLOSS
 
 	public static <T> void registerIntent(CompiledIntent<T> intent)
 	{
-		create1IntentNode(intent.getId(), intent, intent, intent.getBinder(), intent.getSourceType());
+		createIntentNode(intent.getId(), intent, intent, intent.getBinder(), intent.getSourceType(), intent.isFocusTraversable(), intent);
 	}
 
-	public static <T> void create1IntentNode(String id, Capture<Context, Source, T> capture, DisplayRenderer renderer, Binder<?> binder, SourceType assume)
+	public static <T> void createIntentNode(String id, Capture<Context, Source, T> capture, DisplayRenderer renderer, Binder<?> binder, SourceType assume, boolean focus, NodeActionListener listener)
 	{
 		//@builder
 		getCaptureLibrary().register(new VC<T>(id, capture));
@@ -40,6 +41,8 @@ public class GLOSS
 				.id(id)
 				.capture(id)
 				.renderer(renderer)
+				.focusTraversable(focus)
+				.listener(listener)
 				.build());
 		getIntentLibrary().register(Intent.builder()
 				.assume(assume)

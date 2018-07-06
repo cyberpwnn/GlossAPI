@@ -1,25 +1,31 @@
 package com.volmit.gloss.api.display;
 
+import org.bukkit.Location;
+
+import com.volmit.gloss.api.context.Node;
+import com.volmit.gloss.api.source.Source;
 import com.volmit.gloss.util.ScrollResult;
-import com.volmit.volume.lang.collections.GSet;
+import com.volmit.volume.lang.collections.GMap;
 
 public interface SelectionDisplay
 {
-	public GSet<Integer> getTraversableComponents();
+	public boolean hasAnyFocus();
 
 	public int getSelection();
 
-	public void setSelection(int selection);
+	public void setSelection(int selection, Source src);
 
-	public void scroll(ScrollResult r);
-
-	public void setFocusTraversable(int selection, boolean canFocus);
+	public void scroll(ScrollResult r, Source source);
 
 	public boolean isFocusTraversable(int selection);
 
 	public boolean hasSelection();
 
+	public Node getSelectedNode();
+
 	public int getMinFocus();
 
 	public int getMaxFocus();
+
+	public GMap<Integer, Location> computeHotspots();
 }

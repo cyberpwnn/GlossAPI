@@ -53,6 +53,11 @@ public class VC<T> implements IDD
 		return value(null, c);
 	}
 
+	public T value(Source src)
+	{
+		return value(src.getRelatedContext());
+	}
+
 	public boolean shouldCapture(Context c)
 	{
 		if(M.ms() - getLast(c) > (50 * getRate()))

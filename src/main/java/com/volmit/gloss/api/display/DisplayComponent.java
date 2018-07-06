@@ -28,4 +28,6 @@ public interface DisplayComponent
 	public void update(DisplayState state, Source source);
 
 	public DisplayRenderer getRenderer();
+
+	public String getText();
 }

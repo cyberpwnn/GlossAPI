@@ -1,4 +1,4 @@
-package com.volmit.gloss.api.context;
+package com.volmit.gloss.api.binder;
 
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
@@ -50,5 +50,44 @@ public class BlockBinder implements Binder<Material>
 	public boolean shouldBind(EntityType e)
 	{
 		return false;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((materials == null) ? 0 : materials.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		if(this == obj)
+		{
+			return true;
+		}
+		if(obj == null)
+		{
+			return false;
+		}
+		if(!(obj instanceof BlockBinder))
+		{
+			return false;
+		}
+		BlockBinder other = (BlockBinder) obj;
+		if(materials == null)
+		{
+			if(other.materials != null)
+			{
+				return false;
+			}
+		}
+		else if(!materials.equals(other.materials))
+		{
+			return false;
+		}
+		return true;
 	}
 }

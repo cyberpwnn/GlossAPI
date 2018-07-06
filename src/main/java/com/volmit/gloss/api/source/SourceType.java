@@ -4,6 +4,5 @@ public enum SourceType
 {
 	POSITIONAL,
 	ENTITY,
-	BLOCK,
-	OTHER
+	BLOCK;
 }
