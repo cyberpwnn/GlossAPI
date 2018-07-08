@@ -1,12 +1,14 @@
 package com.volmit.gloss.api.display;
 
-import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.entity.Player;
 
+import com.volmit.gloss.util.CC;
 import com.volmit.volume.lang.collections.GList;
 
 public interface TextFilter
 {
-	public String filter(TextComponent... components);
+	public String filter(Player p, Location l, TextComponent... components);
 
 	public static TextComponent[] extract(String src)
 	{
@@ -32,7 +34,7 @@ public interface TextFilter
 					buffer = "";
 				}
 
-				cs.add(new BasicTextComponent(ChatColor.getByChar(v[i + 1])));
+				cs.add(new BasicTextComponent(CC.getByChar(v[i + 1])));
 				skip = true;
 			}
 

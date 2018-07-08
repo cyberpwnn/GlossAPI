@@ -1,12 +1,12 @@
 package com.volmit.gloss.api.display;
 
-import org.bukkit.ChatColor;
+import com.volmit.gloss.util.CC;
 
 public interface TextComponent
 {
 	public boolean isColor();
 
-	public ChatColor getColor();
+	public CC getColor();
 
 	public String get();
 }

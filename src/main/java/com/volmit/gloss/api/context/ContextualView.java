@@ -27,4 +27,6 @@ public interface ContextualView
 	public void update(ExecutorService svc);
 
 	public StaticContext getStaticContextLooking();
+
+	public void destroy();
 }

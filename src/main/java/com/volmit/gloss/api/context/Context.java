@@ -17,6 +17,8 @@ public interface Context extends Updateable
 {
 	public void unbind();
 
+	public void target(Location l);
+
 	public void push(GList<Intent> intents);
 
 	public Source getSource();
@@ -48,4 +50,6 @@ public interface Context extends Updateable
 	public void setActive(boolean active);
 
 	public void fireAction(ActionType type);
+
+	public void destroy();
 }

@@ -1,14 +1,14 @@
 package com.volmit.gloss.api.display;
 
-import org.bukkit.ChatColor;
+import com.volmit.gloss.util.CC;
 
 public class BasicTextComponent implements TextComponent
 {
-	private ChatColor c;
+	private CC c;
 	private String t;
 	private boolean cc;
 
-	public BasicTextComponent(ChatColor c)
+	public BasicTextComponent(CC c)
 	{
 		cc = true;
 		this.c = c;
@@ -26,7 +26,7 @@ public class BasicTextComponent implements TextComponent
 	}
 
 	@Override
-	public ChatColor getColor()
+	public CC getColor()
 	{
 		return c;
 	}
