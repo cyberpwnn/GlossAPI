@@ -29,4 +29,6 @@ public interface ContextualView
 	public StaticContext getStaticContextLooking();
 
 	public void destroy();
+
+	public void justClicked();
 }

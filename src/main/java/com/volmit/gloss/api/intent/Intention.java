@@ -2,6 +2,7 @@ package com.volmit.gloss.api.intent;
 
 import com.volmit.gloss.api.GLOSS;
 import com.volmit.gloss.api.binder.Binder;
+import com.volmit.gloss.api.capture.VC;
 import com.volmit.gloss.api.context.Context;
 import com.volmit.gloss.api.source.Source;
 import com.volmit.gloss.api.source.SourceType;
@@ -21,6 +22,12 @@ public abstract class Intention<T> implements CompiledIntent<T>
 		this.sourceType = sourceType;
 		this.binder = binder;
 		GLOSS.registerIntent(this);
+	}
+
+	@SuppressWarnings("unchecked")
+	protected T get(Source src)
+	{
+		return ((VC<T>) src.getCapture(getId())).value(src);
 	}
 
 	public Intention(String id, SourceType sourceType, Binder<?> binder)

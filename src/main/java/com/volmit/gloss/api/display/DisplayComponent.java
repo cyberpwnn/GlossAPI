@@ -7,6 +7,8 @@ import com.volmit.gloss.api.source.Source;
 
 public interface DisplayComponent
 {
+	public void justClicked();
+
 	public Location getPosition();
 
 	public void setPosition(Location l);

@@ -8,7 +8,7 @@ import com.volmit.volume.lang.collections.GList;
 
 public interface TextFilter
 {
-	public String filter(Player p, Location l, TextComponent... components);
+	public String filter(Player p, boolean isClicking, Location l, TextComponent... components);
 
 	public static TextComponent[] extract(String src)
 	{

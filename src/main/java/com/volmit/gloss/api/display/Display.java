@@ -25,4 +25,6 @@ public interface Display
 	public void setTarget(Location l);
 
 	public void destroy();
+
+	public void justClicked();
 }

@@ -285,6 +285,33 @@ public enum CC
 		{
 			return null;
 		}
+	},
+
+	LINK('i', 0x19, true)
+	{
+		@Override
+		public net.md_5.bungee.api.ChatColor asBungee()
+		{
+			return null;
+		}
+	},
+
+	URL('h', 0x20, true)
+	{
+		@Override
+		public net.md_5.bungee.api.ChatColor asBungee()
+		{
+			return null;
+		}
+	},
+
+	ABSOLUTE('x', 0x21, true)
+	{
+		@Override
+		public net.md_5.bungee.api.ChatColor asBungee()
+		{
+			return null;
+		}
 	};
 
 	/**
@@ -633,7 +660,7 @@ public enum CC
 		char[] b = textToTranslate.toCharArray();
 		for(int i = 0; i < b.length - 1; i++)
 		{
-			if(b[i] == altColorChar && "0123456789AaBbCcDdEeFfKkLlMmNnOoRrGgSsQq".indexOf(b[i + 1]) > -1)
+			if(b[i] == altColorChar && "0123456789AaBbCcDdEeFfKkLlMmNnOoRrGgSsQqIiXxHh".indexOf(b[i + 1]) > -1)
 			{
 				b[i] = CC.COLOR_CHAR;
 				b[i + 1] = Character.toLowerCase(b[i + 1]);
