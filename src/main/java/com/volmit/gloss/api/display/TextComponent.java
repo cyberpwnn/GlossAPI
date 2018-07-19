@@ -1,6 +1,6 @@
 package com.volmit.gloss.api.display;
 
-import com.volmit.gloss.util.CC;
+import com.volmit.gloss.api.util.CC;
 
 public interface TextComponent
 {

@@ -4,7 +4,7 @@ import org.bukkit.Location;
 
 import com.volmit.gloss.api.capture.VC;
 import com.volmit.gloss.api.context.Context;
-import com.volmit.gloss.util.Updateable;
+import com.volmit.gloss.api.util.Updateable;
 import com.volmit.volume.lang.collections.GList;
 
 public interface Source extends Updateable

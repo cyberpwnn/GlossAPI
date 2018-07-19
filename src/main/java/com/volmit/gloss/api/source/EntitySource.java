@@ -8,4 +8,8 @@ public interface EntitySource extends Source
 	public Entity getEntity();
 
 	public EntityType getEntityType();
+
+	public boolean isMountable();
+
+	public void setMountable(boolean m);
 }

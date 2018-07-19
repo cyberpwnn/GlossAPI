@@ -3,9 +3,10 @@ package com.volmit.gloss.api.binder;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 
+import com.volmit.gloss.api.util.IJSON;
 import com.volmit.volume.lang.collections.GSet;
 
-public interface Binder<T>
+public interface Binder<T> extends IJSON
 {
 	public boolean shouldBind(Material m);
 

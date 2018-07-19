@@ -2,7 +2,7 @@ package com.volmit.gloss.api.capture;
 
 import com.volmit.gloss.api.context.Context;
 import com.volmit.gloss.api.source.Source;
-import com.volmit.gloss.util.IDD;
+import com.volmit.gloss.api.util.IDD;
 import com.volmit.volume.lang.collections.GMap;
 import com.volmit.volume.math.M;
 

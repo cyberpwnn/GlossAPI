@@ -5,7 +5,7 @@ import com.volmit.gloss.api.capture.GlossNode;
 import com.volmit.gloss.api.capture.UselessNodeListener;
 import com.volmit.gloss.api.capture.VC;
 import com.volmit.gloss.api.display.DisplayRenderer;
-import com.volmit.gloss.util.IDD;
+import com.volmit.gloss.api.util.IDD;
 import com.volmit.volume.lang.collections.GList;
 import com.volmit.volume.lang.collections.GMap;
 

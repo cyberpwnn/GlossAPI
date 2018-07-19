@@ -8,6 +8,8 @@ import com.volmit.volume.lang.collections.GList;
 
 public interface Display
 {
+	public UpdateTracker getTracker();
+
 	public int getSize();
 
 	public void clear();
@@ -18,7 +20,7 @@ public interface Display
 
 	public void add(Node node, DisplayComponent component);
 
-	public void update(Location target, Source src);
+	public void update(double distanceSquared, Location target, Source src);
 
 	public Location getTarget();
 

@@ -7,10 +7,10 @@ import org.bukkit.util.Vector;
 import com.volmit.gloss.api.display.Display;
 import com.volmit.gloss.api.intent.Intent;
 import com.volmit.gloss.api.source.Source;
-import com.volmit.gloss.util.ActionType;
-import com.volmit.gloss.util.ScrollGate;
-import com.volmit.gloss.util.ScrollResult;
-import com.volmit.gloss.util.Updateable;
+import com.volmit.gloss.api.util.ActionType;
+import com.volmit.gloss.api.util.ScrollGate;
+import com.volmit.gloss.api.util.ScrollResult;
+import com.volmit.gloss.api.util.Updateable;
 import com.volmit.volume.lang.collections.GList;
 
 public interface Context extends Updateable

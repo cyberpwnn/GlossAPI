@@ -7,8 +7,9 @@ import com.volmit.gloss.api.context.NodeActionListener;
 import com.volmit.gloss.api.display.DisplayRenderer;
 import com.volmit.gloss.api.source.Source;
 import com.volmit.gloss.api.source.SourceType;
+import com.volmit.gloss.api.util.IJSON;
 
-public interface CompiledIntent<T> extends DisplayRenderer, Capture<Context, Source, T>, NodeActionListener
+public interface CompiledIntent<T> extends DisplayRenderer, Capture<Context, Source, T>, NodeActionListener, IJSON
 {
 	public String getId();
 

@@ -3,6 +3,7 @@ package com.volmit.gloss.api;
 import org.bukkit.plugin.Plugin;
 
 import com.volmit.gloss.api.binder.Binder;
+import com.volmit.gloss.api.board.BoardLibrary;
 import com.volmit.gloss.api.capture.Capture;
 import com.volmit.gloss.api.capture.VC;
 import com.volmit.gloss.api.context.Context;
@@ -11,17 +12,18 @@ import com.volmit.gloss.api.context.NodeActionListener;
 import com.volmit.gloss.api.display.DisplayRenderer;
 import com.volmit.gloss.api.intent.CompiledIntent;
 import com.volmit.gloss.api.intent.Intent;
+import com.volmit.gloss.api.library.CaptureLibrary;
+import com.volmit.gloss.api.library.IntentLibrary;
+import com.volmit.gloss.api.library.NodeLibrary;
 import com.volmit.gloss.api.source.Source;
 import com.volmit.gloss.api.source.SourceType;
-import com.volmit.gloss.library.CaptureLibrary;
-import com.volmit.gloss.library.IntentLibrary;
-import com.volmit.gloss.library.NodeLibrary;
 
 public class GLOSS
 {
 	private static IntentLibrary intentLibrary;
 	private static CaptureLibrary captureLibrary;
 	private static NodeLibrary nodeLibrary;
+	private static BoardLibrary boardLibrary;
 
 	public static void registerIntentions(Plugin plugin, String superPackage)
 	{
@@ -51,13 +53,20 @@ public class GLOSS
 				.node(id)
 				.build());
 		//@done
+		System.out.println("Registered " + id);
 	}
 
-	public static void init(IntentLibrary intentLibrary, CaptureLibrary captureLibrary, NodeLibrary nodeLibrary)
+	public static void init(IntentLibrary intentLibrary, CaptureLibrary captureLibrary, NodeLibrary nodeLibrary, BoardLibrary boardLibrary)
 	{
 		GLOSS.intentLibrary = intentLibrary;
 		GLOSS.captureLibrary = captureLibrary;
 		GLOSS.nodeLibrary = nodeLibrary;
+		GLOSS.boardLibrary = boardLibrary;
+	}
+
+	public static BoardLibrary getBoardLibrary()
+	{
+		return boardLibrary;
 	}
 
 	public static IntentLibrary getIntentLibrary()

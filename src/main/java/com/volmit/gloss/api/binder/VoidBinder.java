@@ -4,6 +4,7 @@ import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 
 import com.volmit.volume.lang.collections.GSet;
+import com.volmit.volume.lang.json.JSONObject;
 
 public class VoidBinder implements Binder<Void>
 {
@@ -41,5 +42,28 @@ public class VoidBinder implements Binder<Void>
 	public GSet<Void> get()
 	{
 		return new GSet<Void>();
+	}
+
+	@Override
+	public JSONObject toJSON()
+	{
+		JSONObject o = new JSONObject();
+		toJSON(o);
+
+		return o;
+	}
+
+	@Override
+	public JSONObject toJSON(JSONObject j)
+	{
+		j.put("void", "void");
+
+		return j;
+	}
+
+	@Override
+	public void fromJSON(JSONObject j)
+	{
+
 	}
 }

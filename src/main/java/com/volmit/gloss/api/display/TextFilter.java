@@ -3,12 +3,51 @@ package com.volmit.gloss.api.display;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
-import com.volmit.gloss.util.CC;
+import com.volmit.gloss.api.util.CC;
 import com.volmit.volume.lang.collections.GList;
 
 public interface TextFilter
 {
 	public String filter(Player p, boolean isClicking, Location l, TextComponent... components);
+
+	public static String compress(String c)
+	{
+		TextComponent[] f = extract(c);
+		CC lastColor = CC.WHITE;
+		CC lastFormat = CC.RESET;
+		String m = "";
+
+		for(TextComponent i : f)
+		{
+			if(i.isColor())
+			{
+				if(i.getColor().isFormat())
+				{
+					if(!lastFormat.equals(i.getColor()))
+					{
+						lastFormat = i.getColor();
+						m += lastFormat;
+					}
+				}
+
+				else
+				{
+					if(!lastColor.equals(i.getColor()))
+					{
+						lastColor = i.getColor();
+						m += lastColor;
+					}
+				}
+			}
+
+			else
+			{
+				m += i.get();
+			}
+		}
+
+		return m;
+	}
 
 	public static TextComponent[] extract(String src)
 	{

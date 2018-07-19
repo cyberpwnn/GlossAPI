@@ -4,7 +4,7 @@ import com.volmit.gloss.api.GLOSS;
 import com.volmit.gloss.api.binder.Binder;
 import com.volmit.gloss.api.context.Node;
 import com.volmit.gloss.api.source.SourceType;
-import com.volmit.gloss.util.IDD;
+import com.volmit.gloss.api.util.IDD;
 import com.volmit.volume.lang.collections.GList;
 
 public interface Intent extends IDD

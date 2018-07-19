@@ -4,7 +4,7 @@ import com.volmit.gloss.api.binder.Binder;
 import com.volmit.gloss.api.context.Context;
 import com.volmit.gloss.api.source.Source;
 import com.volmit.gloss.api.source.SourceType;
-import com.volmit.gloss.util.ActionType;
+import com.volmit.gloss.api.util.ActionType;
 
 public abstract class FocusableIntention<T> extends Intention<T>
 {

@@ -3,7 +3,10 @@ package com.volmit.gloss.api.binder;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 
+import com.volmit.gloss.api.parse.PBinder;
 import com.volmit.volume.lang.collections.GSet;
+import com.volmit.volume.lang.json.JSONArray;
+import com.volmit.volume.lang.json.JSONObject;
 
 public class BlockBinder implements Binder<Material>
 {
@@ -12,6 +15,16 @@ public class BlockBinder implements Binder<Material>
 	public BlockBinder()
 	{
 		materials = new GSet<Material>();
+	}
+
+	public BlockBinder accept(PBinder b)
+	{
+		for(String i : b.getBind())
+		{
+			accept(Material.valueOf(i));
+		}
+
+		return this;
 	}
 
 	@Override
@@ -89,5 +102,59 @@ public class BlockBinder implements Binder<Material>
 			return false;
 		}
 		return true;
+	}
+
+	@Override
+	public JSONObject toJSON()
+	{
+		JSONObject ja = new JSONObject();
+		toJSON(ja);
+		return ja;
+	}
+
+	@Override
+	public JSONObject toJSON(JSONObject j)
+	{
+		j.put("type", "block");
+		JSONArray ja = new JSONArray();
+
+		for(Material i : get())
+		{
+			ja.put(i.name());
+		}
+
+		j.put("bind", ja);
+
+		return j;
+	}
+
+	@Override
+	public void fromJSON(JSONObject j)
+	{
+		if(j.getString("type").equals("block"))
+		{
+			materials.clear();
+			JSONArray ja = j.getJSONArray("bind");
+
+			for(int i = 0; i < ja.length(); i++)
+			{
+				Material ee = null;
+
+				try
+				{
+					ee = Material.valueOf(ja.getString(i));
+				}
+
+				catch(Exception e)
+				{
+
+				}
+
+				if(ee != null)
+				{
+					materials.add(ee);
+				}
+			}
+		}
 	}
 }
