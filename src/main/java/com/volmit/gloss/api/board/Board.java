@@ -2,9 +2,10 @@ package com.volmit.gloss.api.board;
 
 import org.bukkit.entity.Player;
 
+import com.volmit.gloss.api.util.IDD;
 import com.volmit.volume.lang.collections.GList;
 
-public interface Board
+public interface Board extends IDD
 {
 	public void setFromMeta(BoardMeta meta);
 
@@ -19,8 +20,6 @@ public interface Board
 	public String getTitle();
 
 	public void setTitle(String title);
-
-	public String getId();
 
 	public GList<String> getContent();
 

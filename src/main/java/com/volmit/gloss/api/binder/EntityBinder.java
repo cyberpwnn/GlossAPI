@@ -3,7 +3,6 @@ package com.volmit.gloss.api.binder;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 
-import com.volmit.gloss.api.parse.PBinder;
 import com.volmit.volume.lang.collections.GSet;
 import com.volmit.volume.lang.json.JSONArray;
 import com.volmit.volume.lang.json.JSONObject;
@@ -15,16 +14,6 @@ public class EntityBinder implements Binder<EntityType>
 	public EntityBinder()
 	{
 		materials = new GSet<EntityType>();
-	}
-
-	public EntityBinder accept(PBinder b)
-	{
-		for(String i : b.getBind())
-		{
-			accept(EntityType.valueOf(i));
-		}
-
-		return this;
 	}
 
 	@Override

@@ -13,6 +13,7 @@ import com.volmit.gloss.api.display.DisplayRenderer;
 import com.volmit.gloss.api.intent.CompiledIntent;
 import com.volmit.gloss.api.intent.Intent;
 import com.volmit.gloss.api.library.CaptureLibrary;
+import com.volmit.gloss.api.library.FunctionLibrary;
 import com.volmit.gloss.api.library.IntentLibrary;
 import com.volmit.gloss.api.library.NodeLibrary;
 import com.volmit.gloss.api.source.Source;
@@ -24,6 +25,7 @@ public class GLOSS
 	private static CaptureLibrary captureLibrary;
 	private static NodeLibrary nodeLibrary;
 	private static BoardLibrary boardLibrary;
+	private static FunctionLibrary functionLibrary;
 
 	public static void registerIntentions(Plugin plugin, String superPackage)
 	{
@@ -56,12 +58,18 @@ public class GLOSS
 		System.out.println("Registered " + id);
 	}
 
-	public static void init(IntentLibrary intentLibrary, CaptureLibrary captureLibrary, NodeLibrary nodeLibrary, BoardLibrary boardLibrary)
+	public static void init(IntentLibrary intentLibrary, CaptureLibrary captureLibrary, NodeLibrary nodeLibrary, BoardLibrary boardLibrary, FunctionLibrary functionLibrary)
 	{
 		GLOSS.intentLibrary = intentLibrary;
 		GLOSS.captureLibrary = captureLibrary;
 		GLOSS.nodeLibrary = nodeLibrary;
 		GLOSS.boardLibrary = boardLibrary;
+		GLOSS.functionLibrary = functionLibrary;
+	}
+
+	public static FunctionLibrary getFunctionLibrary()
+	{
+		return functionLibrary;
 	}
 
 	public static BoardLibrary getBoardLibrary()

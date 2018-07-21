@@ -5,11 +5,14 @@ import java.util.concurrent.ExecutorService;
 import org.bukkit.entity.Player;
 
 import com.volmit.gloss.api.board.Board;
+import com.volmit.gloss.api.board.BoardContext;
 import com.volmit.gloss.api.board.BoardMeta;
 import com.volmit.volume.lang.collections.GList;
 
 public interface ContextualView
 {
+	public BoardContext getBoardContext();
+
 	public Player getPlayer();
 
 	public Board getBoard();

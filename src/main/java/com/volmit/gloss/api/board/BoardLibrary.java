@@ -1,8 +1,11 @@
 package com.volmit.gloss.api.board;
 
+
 import org.bukkit.entity.Player;
 
-public interface BoardLibrary
+import com.volmit.gloss.api.library.Library;
+
+public interface BoardLibrary extends Library<BoardMeta>
 {
 	public void registerBoard(BoardMeta meta);
 
