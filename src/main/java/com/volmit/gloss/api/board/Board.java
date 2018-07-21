@@ -29,6 +29,8 @@ public interface Board extends IDD
 
 	public String getLine(int index);
 
+	public void forceUpdate();
+
 	public void clear();
 
 	public Player getPlayer();
