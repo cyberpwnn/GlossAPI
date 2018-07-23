@@ -12,6 +12,10 @@ public interface BoardMeta extends Named, IDD, IJSON, FilteredRenderer
 {
 	public GList<String> getLines();
 
+	public String getPrimaryWorld();
+
+	public void setPrimaryWorld(String world);
+
 	public void addLine(String s);
 
 	public void removeLine(int id);

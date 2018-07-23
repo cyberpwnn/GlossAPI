@@ -16,6 +16,7 @@ public class BasicTextComponent implements TextComponent
 
 	public BasicTextComponent(String t)
 	{
+		cc = false;
 		this.t = t;
 	}
 

@@ -52,7 +52,7 @@ public interface TextFilter
 	public static TextComponent[] extract(String src)
 	{
 		GList<TextComponent> cs = new GList<TextComponent>();
-		char s = '§';
+		char s = CC.COLOR_CHAR;
 		char[] v = src.toCharArray();
 		boolean skip = false;
 		String buffer = "";
@@ -73,7 +73,8 @@ public interface TextFilter
 					buffer = "";
 				}
 
-				cs.add(new BasicTextComponent(CC.getByChar(v[i + 1])));
+				CC cv = CC.getByChar(v[i + 1]);
+				cs.add(new BasicTextComponent(cv));
 				skip = true;
 			}
 
