@@ -14,6 +14,7 @@ import com.volmit.gloss.api.intent.CompiledIntent;
 import com.volmit.gloss.api.intent.Intent;
 import com.volmit.gloss.api.library.AnimationLibrary;
 import com.volmit.gloss.api.library.CaptureLibrary;
+import com.volmit.gloss.api.library.EmojiLibrary;
 import com.volmit.gloss.api.library.FunctionLibrary;
 import com.volmit.gloss.api.library.IntentLibrary;
 import com.volmit.gloss.api.library.NodeLibrary;
@@ -28,6 +29,7 @@ public class GLOSS
 	private static BoardLibrary boardLibrary;
 	private static FunctionLibrary functionLibrary;
 	private static AnimationLibrary animationLibrary;
+	private static EmojiLibrary emojiLibrary;
 
 	public static void registerIntentions(Plugin plugin, String superPackage)
 	{
@@ -60,7 +62,7 @@ public class GLOSS
 		System.out.println("Registered " + id);
 	}
 
-	public static void init(IntentLibrary intentLibrary, CaptureLibrary captureLibrary, NodeLibrary nodeLibrary, BoardLibrary boardLibrary, FunctionLibrary functionLibrary, AnimationLibrary animationLibrary)
+	public static void init(IntentLibrary intentLibrary, CaptureLibrary captureLibrary, NodeLibrary nodeLibrary, BoardLibrary boardLibrary, FunctionLibrary functionLibrary, AnimationLibrary animationLibrary, EmojiLibrary emojiLibrary)
 	{
 		GLOSS.intentLibrary = intentLibrary;
 		GLOSS.captureLibrary = captureLibrary;
@@ -68,11 +70,17 @@ public class GLOSS
 		GLOSS.boardLibrary = boardLibrary;
 		GLOSS.functionLibrary = functionLibrary;
 		GLOSS.animationLibrary = animationLibrary;
+		GLOSS.emojiLibrary = emojiLibrary;
 	}
 
 	public static AnimationLibrary getAnimationLibrary()
 	{
 		return animationLibrary;
+	}
+
+	public static EmojiLibrary getEmojiLibrary()
+	{
+		return emojiLibrary;
 	}
 
 	public static FunctionLibrary getFunctionLibrary()

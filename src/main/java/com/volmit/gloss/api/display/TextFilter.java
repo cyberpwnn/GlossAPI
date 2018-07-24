@@ -10,11 +10,18 @@ public interface TextFilter
 {
 	public String filter(Player p, boolean isClicking, Location l, TextComponent... components);
 
+	boolean compression = true;
+
 	public static String compress(String c)
 	{
+		if(!compression)
+		{
+			return c;
+		}
+
 		TextComponent[] f = extract(c);
 		CC lastColor = CC.WHITE;
-		CC lastFormat = CC.RESET;
+		CC lastFormat = null;
 		String m = "";
 
 		for(TextComponent i : f)
@@ -23,7 +30,7 @@ public interface TextFilter
 			{
 				if(i.getColor().isFormat())
 				{
-					if(!lastFormat.equals(i.getColor()))
+					if(lastFormat == null || !lastFormat.equals(i.getColor()))
 					{
 						lastFormat = i.getColor();
 						m += lastFormat;
@@ -35,6 +42,7 @@ public interface TextFilter
 					if(!lastColor.equals(i.getColor()))
 					{
 						lastColor = i.getColor();
+						lastFormat = null;
 						m += lastColor;
 					}
 				}
