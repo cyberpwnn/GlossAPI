@@ -9,6 +9,8 @@ import com.volmit.volume.lang.collections.GList;
 
 public interface IntentLibrary extends Library<Intent>
 {
+	public double getStackSpread();
+
 	public GList<Intent> getIntents(Material material);
 
 	public GList<Intent> getIntents(EntityType entityType);

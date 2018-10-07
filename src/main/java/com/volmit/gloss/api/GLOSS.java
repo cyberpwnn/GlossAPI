@@ -14,10 +14,12 @@ import com.volmit.gloss.api.intent.CompiledIntent;
 import com.volmit.gloss.api.intent.Intent;
 import com.volmit.gloss.api.library.AnimationLibrary;
 import com.volmit.gloss.api.library.CaptureLibrary;
+import com.volmit.gloss.api.library.ContextLibrary;
 import com.volmit.gloss.api.library.EmojiLibrary;
 import com.volmit.gloss.api.library.FunctionLibrary;
 import com.volmit.gloss.api.library.IntentLibrary;
 import com.volmit.gloss.api.library.NodeLibrary;
+import com.volmit.gloss.api.library.SourceLibrary;
 import com.volmit.gloss.api.source.Source;
 import com.volmit.gloss.api.source.SourceType;
 
@@ -30,6 +32,8 @@ public class GLOSS
 	private static FunctionLibrary functionLibrary;
 	private static AnimationLibrary animationLibrary;
 	private static EmojiLibrary emojiLibrary;
+	private static SourceLibrary sourceLibrary;
+	private static ContextLibrary contextLibrary;
 
 	public static void registerIntentions(Plugin plugin, String superPackage)
 	{
@@ -62,15 +66,22 @@ public class GLOSS
 		System.out.println("Registered " + id);
 	}
 
-	public static void init(IntentLibrary intentLibrary, CaptureLibrary captureLibrary, NodeLibrary nodeLibrary, BoardLibrary boardLibrary, FunctionLibrary functionLibrary, AnimationLibrary animationLibrary, EmojiLibrary emojiLibrary)
+	public static void init(IntentLibrary intentLibrary, CaptureLibrary captureLibrary, NodeLibrary nodeLibrary, BoardLibrary boardLibrary, FunctionLibrary functionLibrary, AnimationLibrary animationLibrary, EmojiLibrary emojiLibrary, SourceLibrary sourceLibrary, ContextLibrary contextLibrary)
 	{
 		GLOSS.intentLibrary = intentLibrary;
 		GLOSS.captureLibrary = captureLibrary;
 		GLOSS.nodeLibrary = nodeLibrary;
 		GLOSS.boardLibrary = boardLibrary;
+		GLOSS.contextLibrary = contextLibrary;
 		GLOSS.functionLibrary = functionLibrary;
 		GLOSS.animationLibrary = animationLibrary;
 		GLOSS.emojiLibrary = emojiLibrary;
+		GLOSS.sourceLibrary = sourceLibrary;
+	}
+
+	public static SourceLibrary getSourceLibrary()
+	{
+		return sourceLibrary;
 	}
 
 	public static AnimationLibrary getAnimationLibrary()
@@ -106,5 +117,10 @@ public class GLOSS
 	public static CaptureLibrary getCaptureLibrary()
 	{
 		return captureLibrary;
+	}
+
+	public static ContextLibrary getContextLibrary()
+	{
+		return contextLibrary;
 	}
 }
