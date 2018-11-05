@@ -1,5 +1,7 @@
 package com.volmit.gloss.api;
 
+import java.io.File;
+
 import org.bukkit.plugin.Plugin;
 
 import com.volmit.gloss.api.binder.Binder;
@@ -38,6 +40,11 @@ public class GLOSS
 	public static void registerIntentions(Plugin plugin, String superPackage)
 	{
 		intentLibrary.register(plugin, superPackage);
+	}
+
+	public static File getConfigLocation(Plugin plugin)
+	{
+		return contextLibrary.getConfigFor(plugin);
 	}
 
 	public static <T> void registerIntent(CompiledIntent<T> intent)
