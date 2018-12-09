@@ -3,6 +3,7 @@ package com.volmit.gloss.api.intent;
 import org.bukkit.Location;
 import org.bukkit.inventory.ItemStack;
 
+import com.volmit.gloss.api.display.SignalType;
 import com.volmit.gloss.api.util.IDD;
 import com.volmit.gloss.api.util.IJSON;
 import com.volmit.gloss.api.util.Named;
@@ -31,4 +32,6 @@ public interface Descriptor extends Named, IDD, IJSON
 	public ItemStack toBook();
 
 	public void fromBook(ItemStack bm);
+
+	public void pulse(SignalType type);
 }

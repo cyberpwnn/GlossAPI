@@ -14,6 +14,14 @@ public interface Display
 
 	public void clear();
 
+	public void setEmissive(boolean emissive);
+
+	public void setEmissiveLevel(int lightLevel);
+
+	public int getEmissiveLevel();
+
+	public boolean isEmissive();
+
 	public GList<DisplayComponent> getComponents();
 
 	public GList<Node> getNodes();
