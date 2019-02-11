@@ -9,6 +9,7 @@ import com.volmit.gloss.api.GLOSS;
 import com.volmit.gloss.api.board.BoardMeta;
 import com.volmit.gloss.api.context.TabMeta;
 import com.volmit.gloss.api.intent.Descriptor;
+import com.volmit.gloss.api.intent.TemporaryDescriptor;
 
 public interface GlossAPI
 {
@@ -21,6 +22,8 @@ public interface GlossAPI
 	public Descriptor createHologram(String id, Location position);
 
 	public boolean hasHologram(String id);
+
+	public TemporaryDescriptor createTemporaryHologram(String id, Location initialLocation, long ms);
 
 	public Descriptor getHologram(String id);
 

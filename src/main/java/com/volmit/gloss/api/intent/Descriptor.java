@@ -10,7 +10,7 @@ import com.volmit.gloss.api.util.Named;
 
 import primal.lang.collection.GList;
 
-public interface Descriptor extends Named, IDD, IJSON
+public interface Descriptor extends Named, IDD, IJSON, Emissive
 {
 	public Location getLocation();
 

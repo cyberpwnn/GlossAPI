@@ -3,25 +3,18 @@ package com.volmit.gloss.api.display;
 import org.bukkit.Location;
 
 import com.volmit.gloss.api.context.Node;
+import com.volmit.gloss.api.intent.Emissive;
 import com.volmit.gloss.api.source.Source;
 
 import primal.lang.collection.GList;
 
-public interface Display
+public interface Display extends Emissive
 {
 	public UpdateTracker getTracker();
 
 	public int getSize();
 
 	public void clear();
-
-	public void setEmissive(boolean emissive);
-
-	public void setEmissiveLevel(int lightLevel);
-
-	public int getEmissiveLevel();
-
-	public boolean isEmissive();
 
 	public GList<DisplayComponent> getComponents();
 
