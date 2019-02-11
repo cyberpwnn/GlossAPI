@@ -4,7 +4,7 @@ import java.util.concurrent.ExecutorService;
 
 import org.bukkit.World;
 
-import com.volmit.volume.lang.collections.GList;
+import primal.lang.collection.GList;
 
 public interface SourceWorld
 {

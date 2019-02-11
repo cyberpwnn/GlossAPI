@@ -11,7 +11,8 @@ import com.volmit.gloss.api.util.ActionType;
 import com.volmit.gloss.api.util.ScrollGate;
 import com.volmit.gloss.api.util.ScrollResult;
 import com.volmit.gloss.api.util.Updateable;
-import com.volmit.volume.lang.collections.GList;
+
+import primal.lang.collection.GList;
 
 public interface Context extends Updateable
 {

@@ -1,6 +1,6 @@
 package com.volmit.gloss.api.animation;
 
-import com.volmit.volume.math.M;
+import primal.compute.math.M;
 
 @FunctionalInterface
 public interface Animator

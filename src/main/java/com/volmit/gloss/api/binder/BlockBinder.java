@@ -3,9 +3,9 @@ package com.volmit.gloss.api.binder;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 
-import com.volmit.volume.lang.collections.GSet;
-import com.volmit.volume.lang.json.JSONArray;
-import com.volmit.volume.lang.json.JSONObject;
+import primal.lang.collection.GSet;
+import primal.lang.json.JSONArray;
+import primal.lang.json.JSONObject;
 
 public class BlockBinder implements Binder<Material>
 {

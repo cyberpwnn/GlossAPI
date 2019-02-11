@@ -4,7 +4,8 @@ import org.bukkit.Location;
 
 import com.volmit.gloss.api.context.Node;
 import com.volmit.gloss.api.source.Source;
-import com.volmit.volume.lang.collections.GList;
+
+import primal.lang.collection.GList;
 
 public interface Display
 {

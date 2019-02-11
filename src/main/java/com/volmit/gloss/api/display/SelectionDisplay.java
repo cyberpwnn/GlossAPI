@@ -5,7 +5,8 @@ import org.bukkit.Location;
 import com.volmit.gloss.api.context.Node;
 import com.volmit.gloss.api.source.Source;
 import com.volmit.gloss.api.util.ScrollResult;
-import com.volmit.volume.lang.collections.GMap;
+
+import primal.lang.collection.GMap;
 
 public interface SelectionDisplay
 {

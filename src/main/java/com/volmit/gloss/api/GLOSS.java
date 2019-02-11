@@ -24,6 +24,7 @@ import com.volmit.gloss.api.library.NodeLibrary;
 import com.volmit.gloss.api.library.SourceLibrary;
 import com.volmit.gloss.api.source.Source;
 import com.volmit.gloss.api.source.SourceType;
+import com.volmit.gloss.api.wrapper.GlossAPI;
 
 public class GLOSS
 {
@@ -36,6 +37,7 @@ public class GLOSS
 	private static EmojiLibrary emojiLibrary;
 	private static SourceLibrary sourceLibrary;
 	private static ContextLibrary contextLibrary;
+	private static GlossAPI api;
 
 	public static void registerIntentions(Plugin plugin, String superPackage)
 	{
@@ -86,6 +88,11 @@ public class GLOSS
 		GLOSS.sourceLibrary = sourceLibrary;
 	}
 
+	public static void initWrapper(GlossAPI api)
+	{
+		GLOSS.api = api;
+	}
+
 	public static SourceLibrary getSourceLibrary()
 	{
 		return sourceLibrary;
@@ -129,5 +136,10 @@ public class GLOSS
 	public static ContextLibrary getContextLibrary()
 	{
 		return contextLibrary;
+	}
+
+	public static GlossAPI getAPIWrapper()
+	{
+		return api;
 	}
 }

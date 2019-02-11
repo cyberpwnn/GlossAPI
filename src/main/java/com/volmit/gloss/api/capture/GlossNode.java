@@ -3,8 +3,9 @@ package com.volmit.gloss.api.capture;
 import com.volmit.gloss.api.context.Node;
 import com.volmit.gloss.api.context.NodeActionListener;
 import com.volmit.gloss.api.display.DisplayRenderer;
-import com.volmit.volume.lang.collections.GList;
-import com.volmit.volume.lang.collections.GMap;
+
+import primal.lang.collection.GList;
+import primal.lang.collection.GMap;
 
 public class GlossNode implements Node
 {

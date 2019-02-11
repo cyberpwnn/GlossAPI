@@ -1,6 +1,6 @@
 package com.volmit.gloss.api.display;
 
-import com.volmit.volume.math.M;
+import primal.compute.math.M;
 
 public class UpdateTracker
 {

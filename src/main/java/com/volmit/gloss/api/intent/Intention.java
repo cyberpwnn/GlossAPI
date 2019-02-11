@@ -10,7 +10,8 @@ import com.volmit.gloss.api.context.Context;
 import com.volmit.gloss.api.source.Source;
 import com.volmit.gloss.api.source.SourceType;
 import com.volmit.gloss.api.util.ActionType;
-import com.volmit.volume.lang.json.JSONObject;
+
+import primal.lang.json.JSONObject;
 
 public abstract class Intention<T> implements CompiledIntent<T>
 {

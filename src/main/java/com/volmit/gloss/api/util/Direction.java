@@ -3,9 +3,10 @@ package com.volmit.gloss.api.util;
 import org.bukkit.util.Vector;
 
 import com.volmit.gloss.api.util.Cuboid.CuboidDirection;
-import com.volmit.volume.lang.collections.GBiset;
-import com.volmit.volume.lang.collections.GList;
-import com.volmit.volume.lang.collections.GMap;
+
+import primal.lang.collection.GBiset;
+import primal.lang.collection.GList;
+import primal.lang.collection.GMap;
 
 /**
  * Directions

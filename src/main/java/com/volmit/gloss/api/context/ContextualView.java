@@ -7,7 +7,8 @@ import org.bukkit.entity.Player;
 import com.volmit.gloss.api.board.Board;
 import com.volmit.gloss.api.board.BoardContext;
 import com.volmit.gloss.api.board.BoardMeta;
-import com.volmit.volume.lang.collections.GList;
+
+import primal.lang.collection.GList;
 
 public interface ContextualView
 {
@@ -20,6 +21,10 @@ public interface ContextualView
 	public void setBoardMeta(BoardMeta m);
 
 	public BoardMeta getBoardMeta();
+
+	public TabMeta getTabMeta();
+
+	public void setTabMeta(TabMeta m);
 
 	public boolean hasBoard();
 

@@ -6,15 +6,26 @@ import com.volmit.gloss.api.display.FilteredRenderer;
 import com.volmit.gloss.api.util.IDD;
 import com.volmit.gloss.api.util.IJSON;
 import com.volmit.gloss.api.util.Named;
-import com.volmit.volume.lang.collections.GList;
+
+import primal.lang.collection.GList;
 
 public interface BoardMeta extends Named, IDD, IJSON, FilteredRenderer
 {
 	public GList<String> getLines();
 
-	public String getPrimaryWorld();
+	public void setBoardPermission(String d);
 
-	public void setPrimaryWorld(String world);
+	public String getBoardPermission();
+
+	public void clearBoardPermission();
+
+	public boolean hasBoardPermission();
+
+	public String getBoardPermissionNode();
+
+	public boolean isPrimary();
+
+	public void setPrimary(boolean primary);
 
 	public void addLine(String s);
 

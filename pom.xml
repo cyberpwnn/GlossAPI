@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.volmit</groupId>
 	<artifactId>GlossAPI</artifactId>
-	<version>1.0</version>
+	<version>1.0.3</version>
 	<name>GlossAPI</name>
 	<description>GlossAPI</description>
 	<properties>
@@ -36,23 +36,8 @@
 		</dependency>
 		<dependency>
 			<groupId>com.volmit</groupId>
-			<artifactId>VolumeLang</artifactId>
-			<version>1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.volmit</groupId>
-			<artifactId>VolumeReflect</artifactId>
-			<version>1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.volmit</groupId>
-			<artifactId>VolumeCluster</artifactId>
-			<version>1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.volmit</groupId>
-			<artifactId>VolumeMath</artifactId>
-			<version>1.1</version>
+			<artifactId>Primal</artifactId>
+			<version>1.0.10</version>
 		</dependency>
 	</dependencies>
 </project>

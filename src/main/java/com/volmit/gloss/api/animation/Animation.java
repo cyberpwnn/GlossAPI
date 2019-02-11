@@ -2,7 +2,8 @@ package com.volmit.gloss.api.animation;
 
 import com.volmit.gloss.api.util.IDD;
 import com.volmit.gloss.api.util.IJSON;
-import com.volmit.volume.lang.collections.GList;
+
+import primal.lang.collection.GList;
 
 public interface Animation extends IDD, IJSON
 {

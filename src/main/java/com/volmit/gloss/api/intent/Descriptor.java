@@ -7,7 +7,8 @@ import com.volmit.gloss.api.display.SignalType;
 import com.volmit.gloss.api.util.IDD;
 import com.volmit.gloss.api.util.IJSON;
 import com.volmit.gloss.api.util.Named;
-import com.volmit.volume.lang.collections.GList;
+
+import primal.lang.collection.GList;
 
 public interface Descriptor extends Named, IDD, IJSON
 {

@@ -3,8 +3,9 @@ package com.volmit.gloss.api.capture;
 import com.volmit.gloss.api.context.Context;
 import com.volmit.gloss.api.source.Source;
 import com.volmit.gloss.api.util.IDD;
-import com.volmit.volume.lang.collections.GMap;
-import com.volmit.volume.math.M;
+
+import primal.compute.math.M;
+import primal.lang.collection.GMap;
 
 public class VC<T> implements IDD
 {

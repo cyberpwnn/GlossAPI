@@ -3,7 +3,8 @@ package com.volmit.gloss.api.board;
 import org.bukkit.entity.Player;
 
 import com.volmit.gloss.api.util.IDD;
-import com.volmit.volume.lang.collections.GList;
+
+import primal.lang.collection.GList;
 
 public interface Board extends IDD
 {

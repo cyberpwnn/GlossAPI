@@ -6,10 +6,10 @@ import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Entity;
 import org.bukkit.util.Vector;
 
-import com.volmit.volume.lang.collections.GList;
-import com.volmit.volume.lang.collections.GListAdapter;
-import com.volmit.volume.lang.format.F;
-import com.volmit.volume.math.CDou;
+import primal.compute.math.CDou;
+import primal.lang.collection.GList;
+import primal.lang.collection.GListAdapter;
+import primal.logic.format.F;
 
 /**
  * Vector utilities
