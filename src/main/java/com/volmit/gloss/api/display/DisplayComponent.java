@@ -5,7 +5,7 @@ import org.bukkit.entity.Player;
 
 import com.volmit.gloss.api.source.Source;
 
-public interface DisplayComponent
+public interface DisplayComponent extends StickyDisplay, PivotDisplay
 {
 	public void justClicked();
 

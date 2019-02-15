@@ -3,6 +3,7 @@ package com.volmit.gloss.api.intent;
 import org.bukkit.Location;
 import org.bukkit.inventory.ItemStack;
 
+import com.volmit.gloss.api.display.LineEditor;
 import com.volmit.gloss.api.display.SignalType;
 import com.volmit.gloss.api.util.IDD;
 import com.volmit.gloss.api.util.IJSON;
@@ -10,7 +11,7 @@ import com.volmit.gloss.api.util.Named;
 
 import primal.lang.collection.GList;
 
-public interface Descriptor extends Named, IDD, IJSON, Emissive
+public interface Descriptor extends Named, IDD, IJSON, Emissive, LineEditor
 {
 	public Location getLocation();
 

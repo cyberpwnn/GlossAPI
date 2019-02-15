@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.volmit</groupId>
 	<artifactId>GlossAPI</artifactId>
-	<version>1.0.7</version>
+	<version>1.0.9</version>
 	<name>GlossAPI</name>
 	<description>GlossAPI</description>
 	<properties>
