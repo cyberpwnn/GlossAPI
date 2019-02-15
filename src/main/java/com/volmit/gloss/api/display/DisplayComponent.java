@@ -11,6 +11,8 @@ public interface DisplayComponent extends StickyDisplay, PivotDisplay
 
 	public Location getPosition();
 
+	public String getRawText();
+
 	public void setPosition(Location l);
 
 	public void setDisplay(String content);
@@ -32,4 +34,6 @@ public interface DisplayComponent extends StickyDisplay, PivotDisplay
 	public DisplayRenderer getRenderer();
 
 	public String getText();
+
+	public Location getActualPosition();
 }

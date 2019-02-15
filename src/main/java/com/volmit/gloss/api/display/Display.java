@@ -2,6 +2,7 @@ package com.volmit.gloss.api.display;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
+import org.bukkit.util.Vector;
 
 import com.volmit.gloss.api.context.Node;
 import com.volmit.gloss.api.intent.Emissive;
@@ -9,9 +10,13 @@ import com.volmit.gloss.api.source.Source;
 
 import primal.lang.collection.GList;
 
-public interface Display extends Emissive
+public interface Display extends Emissive, PivotDisplay
 {
 	public UpdateTracker getTracker();
+
+	public Location getBallPoint(Player p);
+
+	public Vector getBallVector(Player p);
 
 	public int getSize();
 
@@ -20,6 +25,10 @@ public interface Display extends Emissive
 	public void stick(int index);
 
 	public void unstick();
+
+	public void setStackSpreadMultiplier(double d);
+
+	public double getStackSpreadMultiplier();
 
 	public int stickFor(Player p);
 
@@ -42,4 +51,6 @@ public interface Display extends Emissive
 	public void destroy();
 
 	public void justClicked();
+
+	public void pivot(Player player);
 }

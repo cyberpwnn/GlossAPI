@@ -36,4 +36,6 @@ public interface Descriptor extends Named, IDD, IJSON, Emissive, LineEditor
 	public void fromBook(ItemStack bm);
 
 	public void pulse(SignalType type);
+
+	public void setLine(String s, int id);
 }
