@@ -12,6 +12,10 @@ import primal.lang.collection.GList;
 
 public interface ContextualView
 {
+	public DropContext getDropContext();
+
+	public InventoryContext getInventoryContext();
+
 	public BoardContext getBoardContext();
 
 	public Player getPlayer();

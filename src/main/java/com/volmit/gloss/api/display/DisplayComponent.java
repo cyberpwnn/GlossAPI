@@ -36,4 +36,6 @@ public interface DisplayComponent extends StickyDisplay, PivotDisplay
 	public String getText();
 
 	public Location getActualPosition();
+
+	public int getEntityId();
 }

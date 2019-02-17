@@ -53,4 +53,6 @@ public interface Display extends Emissive, PivotDisplay
 	public void justClicked();
 
 	public void pivot(Player player);
+
+	public Player getPlayer();
 }
