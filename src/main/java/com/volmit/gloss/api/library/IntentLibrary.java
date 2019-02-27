@@ -6,7 +6,7 @@ import org.bukkit.plugin.Plugin;
 
 import com.volmit.gloss.api.intent.Intent;
 
-import primal.lang.collection.GList;
+import mortar.lang.collection.GList;
 
 public interface IntentLibrary extends Library<Intent>
 {

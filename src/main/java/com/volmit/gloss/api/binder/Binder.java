@@ -5,7 +5,7 @@ import org.bukkit.entity.EntityType;
 
 import com.volmit.gloss.api.util.IJSON;
 
-import primal.lang.collection.GSet;
+import mortar.lang.collection.GSet;
 
 public interface Binder<T> extends IJSON
 {

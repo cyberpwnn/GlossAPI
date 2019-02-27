@@ -9,7 +9,7 @@ import com.volmit.gloss.api.util.IDD;
 import com.volmit.gloss.api.util.IJSON;
 import com.volmit.gloss.api.util.Named;
 
-import primal.lang.collection.GList;
+import mortar.lang.collection.GList;
 
 public interface Descriptor extends Named, IDD, IJSON, Emissive, LineEditor
 {

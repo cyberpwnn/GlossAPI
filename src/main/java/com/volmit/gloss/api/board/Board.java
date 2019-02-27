@@ -4,7 +4,7 @@ import org.bukkit.entity.Player;
 
 import com.volmit.gloss.api.util.IDD;
 
-import primal.lang.collection.GList;
+import mortar.lang.collection.GList;
 
 public interface Board extends IDD
 {

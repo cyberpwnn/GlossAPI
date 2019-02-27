@@ -6,7 +6,7 @@ import com.volmit.gloss.api.capture.VC;
 import com.volmit.gloss.api.context.Context;
 import com.volmit.gloss.api.util.Updateable;
 
-import primal.lang.collection.GList;
+import mortar.lang.collection.GList;
 
 public interface Source extends Updateable
 {

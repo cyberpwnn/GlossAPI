@@ -1,6 +1,6 @@
 package com.volmit.gloss.api.display;
 
-import primal.lang.collection.GList;
+import mortar.lang.collection.GList;
 
 public interface FilterChain
 {

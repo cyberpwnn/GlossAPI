@@ -12,7 +12,7 @@ import com.volmit.gloss.api.util.ScrollGate;
 import com.volmit.gloss.api.util.ScrollResult;
 import com.volmit.gloss.api.util.Updateable;
 
-import primal.lang.collection.GList;
+import mortar.lang.collection.GList;
 
 public interface Context extends Updateable
 {

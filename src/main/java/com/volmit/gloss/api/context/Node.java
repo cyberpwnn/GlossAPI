@@ -7,8 +7,8 @@ import com.volmit.gloss.api.capture.VC;
 import com.volmit.gloss.api.display.DisplayRenderer;
 import com.volmit.gloss.api.util.IDD;
 
-import primal.lang.collection.GList;
-import primal.lang.collection.GMap;
+import mortar.lang.collection.GList;
+import mortar.lang.collection.GMap;
 
 public interface Node extends IDD
 {

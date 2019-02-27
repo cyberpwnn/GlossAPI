@@ -4,9 +4,9 @@ import org.bukkit.util.Vector;
 
 import com.volmit.gloss.api.util.Cuboid.CuboidDirection;
 
-import primal.lang.collection.GBiset;
-import primal.lang.collection.GList;
-import primal.lang.collection.GMap;
+import mortar.lang.collection.GBiset;
+import mortar.lang.collection.GList;
+import mortar.lang.collection.GMap;
 
 /**
  * Directions

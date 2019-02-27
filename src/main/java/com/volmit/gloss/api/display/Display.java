@@ -8,7 +8,7 @@ import com.volmit.gloss.api.context.Node;
 import com.volmit.gloss.api.intent.Emissive;
 import com.volmit.gloss.api.source.Source;
 
-import primal.lang.collection.GList;
+import mortar.lang.collection.GList;
 
 public interface Display extends Emissive, PivotDisplay
 {

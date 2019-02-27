@@ -6,7 +6,7 @@ import com.volmit.gloss.api.context.Node;
 import com.volmit.gloss.api.source.SourceType;
 import com.volmit.gloss.api.util.IDD;
 
-import primal.lang.collection.GList;
+import mortar.lang.collection.GList;
 
 public interface Intent extends IDD
 {

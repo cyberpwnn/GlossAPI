@@ -6,7 +6,7 @@ import com.volmit.gloss.api.context.Node;
 import com.volmit.gloss.api.source.Source;
 import com.volmit.gloss.api.util.ScrollResult;
 
-import primal.lang.collection.GMap;
+import mortar.lang.collection.GMap;
 
 public interface SelectionDisplay
 {

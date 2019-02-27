@@ -6,10 +6,10 @@ import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Entity;
 import org.bukkit.util.Vector;
 
-import primal.compute.math.CDou;
-import primal.lang.collection.GList;
-import primal.lang.collection.GListAdapter;
-import primal.logic.format.F;
+import mortar.compute.math.CDou;
+import mortar.lang.collection.GList;
+import mortar.lang.collection.GListAdapter;
+import mortar.logic.format.F;
 
 /**
  * Vector utilities

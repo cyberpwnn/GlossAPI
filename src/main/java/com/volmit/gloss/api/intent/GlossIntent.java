@@ -4,7 +4,7 @@ import com.volmit.gloss.api.binder.Binder;
 import com.volmit.gloss.api.context.Node;
 import com.volmit.gloss.api.source.SourceType;
 
-import primal.lang.collection.GList;
+import mortar.lang.collection.GList;
 
 public class GlossIntent implements Intent
 {

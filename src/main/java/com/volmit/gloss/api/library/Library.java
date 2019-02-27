@@ -1,6 +1,6 @@
 package com.volmit.gloss.api.library;
 
-import primal.lang.collection.GList;
+import mortar.lang.collection.GList;
 
 public interface Library<T>
 {

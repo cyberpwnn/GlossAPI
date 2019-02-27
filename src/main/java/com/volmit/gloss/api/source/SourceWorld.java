@@ -4,7 +4,7 @@ import java.util.concurrent.ExecutorService;
 
 import org.bukkit.World;
 
-import primal.lang.collection.GList;
+import mortar.lang.collection.GList;
 
 public interface SourceWorld
 {

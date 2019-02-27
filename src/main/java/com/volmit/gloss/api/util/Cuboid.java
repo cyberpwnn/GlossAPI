@@ -17,8 +17,8 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.material.MaterialData;
 
-import primal.lang.collection.GList;
-import primal.lang.collection.GListAdapter;
+import mortar.lang.collection.GList;
+import mortar.lang.collection.GListAdapter;
 
 
 /**

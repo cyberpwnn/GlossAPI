@@ -4,8 +4,8 @@ import com.volmit.gloss.api.context.Context;
 import com.volmit.gloss.api.source.Source;
 import com.volmit.gloss.api.util.IDD;
 
-import primal.compute.math.M;
-import primal.lang.collection.GMap;
+import mortar.compute.math.M;
+import mortar.lang.collection.GMap;
 
 public class VC<T> implements IDD
 {

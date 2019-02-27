@@ -1,6 +1,6 @@
 package com.volmit.gloss.api.util;
 
-import primal.lang.json.JSONObject;
+import mortar.lang.json.JSONObject;
 
 public interface IJSON
 {

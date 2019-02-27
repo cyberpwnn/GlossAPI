@@ -8,7 +8,7 @@ import com.volmit.gloss.api.board.Board;
 import com.volmit.gloss.api.board.BoardContext;
 import com.volmit.gloss.api.board.BoardMeta;
 
-import primal.lang.collection.GList;
+import mortar.lang.collection.GList;
 
 public interface ContextualView
 {

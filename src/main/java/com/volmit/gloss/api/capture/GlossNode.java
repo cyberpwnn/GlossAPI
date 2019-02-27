@@ -4,8 +4,8 @@ import com.volmit.gloss.api.context.Node;
 import com.volmit.gloss.api.context.NodeActionListener;
 import com.volmit.gloss.api.display.DisplayRenderer;
 
-import primal.lang.collection.GList;
-import primal.lang.collection.GMap;
+import mortar.lang.collection.GList;
+import mortar.lang.collection.GMap;
 
 public class GlossNode implements Node
 {
