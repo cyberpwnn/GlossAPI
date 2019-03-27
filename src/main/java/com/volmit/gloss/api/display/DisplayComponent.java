@@ -7,6 +7,10 @@ import com.volmit.gloss.api.source.Source;
 
 public interface DisplayComponent extends StickyDisplay, PivotDisplay
 {
+	public boolean isAttentive();
+
+	public void setAttentive(boolean attentive);
+
 	public void justClicked();
 
 	public Location getPosition();

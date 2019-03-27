@@ -54,4 +54,29 @@ public class UpdateTracker
 
 		return false;
 	}
+
+	public long getLastUpdate()
+	{
+		return lastUpdate;
+	}
+
+	public double getMaxRange()
+	{
+		return maxRange;
+	}
+
+	public double getFastRange()
+	{
+		return fastRange;
+	}
+
+	public int getMaxSpeed()
+	{
+		return maxSpeed;
+	}
+
+	public int getMinSpeed()
+	{
+		return minSpeed;
+	}
 }

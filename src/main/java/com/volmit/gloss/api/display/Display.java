@@ -5,12 +5,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
 import com.volmit.gloss.api.context.Node;
-import com.volmit.gloss.api.intent.Emissive;
 import com.volmit.gloss.api.source.Source;
 
 import mortar.lang.collection.GList;
 
-public interface Display extends Emissive, PivotDisplay
+public interface Display extends PivotDisplay
 {
 	public UpdateTracker getTracker();
 

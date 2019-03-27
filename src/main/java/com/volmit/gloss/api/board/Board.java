@@ -5,6 +5,7 @@ import org.bukkit.entity.Player;
 import com.volmit.gloss.api.util.IDD;
 
 import mortar.lang.collection.GList;
+import mortar.util.text.C;
 
 public interface Board extends IDD
 {
@@ -39,4 +40,12 @@ public interface Board extends IDD
 	public void hide();
 
 	public void show();
+
+	public static String formatCode(int n)
+	{
+		GList<C> c = new GList<>(C.values());
+		c.remove(C.RESET);
+
+		return c.get(c.getIndexOrLast(n)) + "" + C.RESET;
+	}
 }

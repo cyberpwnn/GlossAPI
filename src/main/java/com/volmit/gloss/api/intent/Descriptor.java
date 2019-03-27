@@ -11,8 +11,10 @@ import com.volmit.gloss.api.util.Named;
 
 import mortar.lang.collection.GList;
 
-public interface Descriptor extends Named, IDD, IJSON, Emissive, LineEditor
+public interface Descriptor extends Named, IDD, IJSON, LineEditor, Emissive
 {
+	public PlayerList getPlayerList();
+
 	public Location getLocation();
 
 	public void setLocation(Location l);

@@ -9,4 +9,6 @@ public interface PluginViolator
 	public void engage(Plugin src);
 
 	public void disengage(Plugin src);
+
+	public boolean isSafe();
 }

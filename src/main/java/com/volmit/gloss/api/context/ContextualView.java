@@ -12,6 +12,14 @@ import mortar.lang.collection.GList;
 
 public interface ContextualView
 {
+	public boolean isTimeChanging();
+
+	public void setTimeChanging(boolean changing);
+
+	public void setTimeSync(long time);
+
+	public long getTimeSync();
+
 	public DropContext getDropContext();
 
 	public InventoryContext getInventoryContext();
@@ -31,10 +39,6 @@ public interface ContextualView
 	public void setTabMeta(TabMeta m);
 
 	public boolean hasBoard();
-
-	public int getTrackedBubbles();
-
-	public void setTrackedBubbles(int b);
 
 	public StaticContext getStaticContext(String id);
 
@@ -57,4 +61,6 @@ public interface ContextualView
 	public void destroy();
 
 	public void justClicked();
+
+	public void fastFowardTime(int i);
 }

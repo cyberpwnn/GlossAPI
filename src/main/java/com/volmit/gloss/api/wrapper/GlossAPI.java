@@ -55,6 +55,8 @@ public interface GlossAPI
 
 	public boolean hasBoard(Player p);
 
+	public String filter(Player p, String raw);
+
 	public static GlossAPI getInstance()
 	{
 		return GLOSS.getAPIWrapper();

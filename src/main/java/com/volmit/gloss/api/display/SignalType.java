@@ -6,5 +6,6 @@ public enum SignalType
 	CREATED,
 	DESTROYED,
 	FINISHED_MOVING,
+	CONVERTED,
 	STARTED_MOVING;
 }

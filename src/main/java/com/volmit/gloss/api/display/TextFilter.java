@@ -11,7 +11,42 @@ public interface TextFilter
 {
 	public String filter(Player p, boolean isClicking, Location l, TextComponent... components);
 
-	boolean compression = true;
+	public static boolean compression = true;
+
+	public static String implode(GList<String> basex)
+	{
+		return compress(basex.toString(""));
+	}
+
+	public static GList<String> explode(String text)
+	{
+		GList<String> s = new GList<>();
+		String stripped = CC.stripColor(text);
+		boolean formatter = false;
+		int realIndex = 0;
+
+		for(int i = 0; i < text.length(); i++)
+		{
+			char c = text.charAt(i);
+
+			if(c == CC.COLOR_CHAR)
+			{
+				formatter = true;
+				continue;
+			}
+
+			if(formatter)
+			{
+				formatter = false;
+				continue;
+			}
+
+			s.add(CC.getLastColors(text.substring(0, i)) + stripped.charAt(realIndex));
+			realIndex++;
+		}
+
+		return s;
+	}
 
 	public static String compress(String c)
 	{
