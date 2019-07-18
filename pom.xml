@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.volmit</groupId>
 	<artifactId>GlossAPI</artifactId>
-	<version>1.0.34</version>
+	<version>1.0.40</version>
 	<name>GlossAPI</name>
 	<description>GlossAPI</description>
 	<properties>
@@ -38,7 +38,7 @@
 		<dependency>
 			<groupId>com.volmit</groupId>
 			<artifactId>Mortar</artifactId>
-			<version>1.0.65</version>
+			<version>1.0.66</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
