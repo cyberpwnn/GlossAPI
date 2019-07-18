@@ -24,7 +24,7 @@ public class LitSource
 	{
 		this.level = level;
 
-		if (this.current == null || this.current.getChunk() == null) {
+		if (this.current == null || this.current.getWorld() == null || this.current.getChunk() == null) {
 			return;
 		}
 
@@ -49,13 +49,13 @@ public class LitSource
 
 	public void setPosition(Location newLocation)
 	{
-		if (newLocation == null || newLocation.getChunk() == null) {
+		if (newLocation == null || newLocation.getWorld() == null || newLocation.getChunk() == null) {
 			return;
 		}
 
 		try
 		{
-			if (current != null && current.getChunk() != null) {
+			if (current != null && current.getWorld() != null && current.getChunk() != null) {
 				lighter.unlight(current);
 				lighter.refresh(current.getChunk());
 			}
