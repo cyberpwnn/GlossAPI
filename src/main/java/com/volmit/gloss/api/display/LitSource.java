@@ -24,6 +24,10 @@ public class LitSource
 	{
 		this.level = level;
 
+		if (this.current == null || this.current.getChunk() == null) {
+			return;
+		}
+
 		if(level > 0)
 		{
 			lighter.unlight(current);
@@ -45,10 +49,16 @@ public class LitSource
 
 	public void setPosition(Location newLocation)
 	{
+		if (newLocation == null || newLocation.getChunk() == null) {
+			return;
+		}
+
 		try
 		{
-			lighter.unlight(current);
-			lighter.refresh(current.getChunk());
+			if (current != null && current.getChunk() != null) {
+				lighter.unlight(current);
+				lighter.refresh(current.getChunk());
+			}
 
 			this.current = newLocation.clone();
 
@@ -61,7 +71,7 @@ public class LitSource
 
 		catch(Throwable e)
 		{
-
+			e.printStackTrace();
 		}
 	}
 }
