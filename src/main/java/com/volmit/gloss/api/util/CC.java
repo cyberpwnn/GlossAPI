@@ -260,7 +260,7 @@ public enum CC
 		}
 	},
 
-	GLOW('g', 0x16, true)
+	GLOW('g', 0x16, true, true)
 	{
 		@Override
 		public net.md_5.bungee.api.ChatColor asBungee()
@@ -269,7 +269,7 @@ public enum CC
 		}
 	},
 
-	SHINE('s', 0x17, true)
+	SHINE('s', 0x17, true, true)
 	{
 		@Override
 		public net.md_5.bungee.api.ChatColor asBungee()
@@ -278,7 +278,7 @@ public enum CC
 		}
 	},
 
-	RGB('q', 0x18, true)
+	RGB('q', 0x18, true, true)
 	{
 		@Override
 		public net.md_5.bungee.api.ChatColor asBungee()
@@ -287,7 +287,7 @@ public enum CC
 		}
 	},
 
-	LINK('i', 0x19, true)
+	LINK('i', 0x19, true, true)
 	{
 		@Override
 		public net.md_5.bungee.api.ChatColor asBungee()
@@ -296,7 +296,7 @@ public enum CC
 		}
 	},
 
-	URL('h', 0x20, true)
+	URL('h', 0x20, true, true)
 	{
 		@Override
 		public net.md_5.bungee.api.ChatColor asBungee()
@@ -315,6 +315,7 @@ public enum CC
 	private final int intCode;
 	private final char code;
 	private final boolean isFormat;
+	private final boolean customFormat;
 	private final String toString;
 	private final static Map<Integer, CC> BY_ID = new HashMap<Integer, CC>();
 	private final static Map<Character, CC> BY_CHAR = new HashMap<Character, CC>();
@@ -376,14 +377,19 @@ public enum CC
 
 	private CC(char code, int intCode)
 	{
-		this(code, intCode, false);
+		this(code, intCode, false, false);
 	}
 
 	private CC(char code, int intCode, boolean isFormat)
 	{
+		this(code, intCode, isFormat, false);
+	}
+	private CC(char code, int intCode, boolean isFormat, boolean customFormat)
+	{
 		this.code = code;
 		this.intCode = intCode;
 		this.isFormat = isFormat;
+		this.customFormat = customFormat;
 		this.toString = new String(new char[]
 				{COLOR_CHAR, code});
 	}
@@ -432,6 +438,16 @@ public enum CC
 	public boolean isFormat()
 	{
 		return isFormat;
+	}
+
+	/**
+	 * Determines if this color code is a custom Gloss colour code format,
+	 * otherwise if it is a default vanilla format.
+	 * @return true if custom Gloss format, otherwise default format
+	 */
+	public boolean isCustomFormat()
+	{
+		return this.customFormat;
 	}
 
 	/**
