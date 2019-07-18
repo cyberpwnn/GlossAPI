@@ -38,6 +38,4 @@ public interface BoardMeta extends Named, IDD, IJSON, FilteredRenderer
 	public void setLine(String s, int id);
 
 	public void clearLines();
-
-	public void setTempPlayer(Player p);
 }
