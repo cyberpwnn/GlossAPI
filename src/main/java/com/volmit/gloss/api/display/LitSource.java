@@ -12,7 +12,7 @@ public class LitSource
 	{
 		this.current = initial.clone();
 		this.lighter = lighter;
-		level = 0;
+		this.level = level;
 	}
 
 	public int getLevel()
