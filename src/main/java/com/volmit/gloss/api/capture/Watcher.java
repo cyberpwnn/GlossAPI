@@ -28,7 +28,7 @@ public class Watcher<T>
 
 	public boolean isStale()
 	{
-		return !current.equals(last);
+		return current == null || !current.equals(last);
 	}
 
 	public void mark()

@@ -13,6 +13,10 @@ import mortar.lang.collection.GList;
 
 public interface Descriptor extends Named, IDD, IJSON, LineEditor, Emissive
 {
+	void setMoving(boolean m);
+
+	boolean isMoving();
+
 	public PlayerList getPlayerList();
 
 	public Location getLocation();
