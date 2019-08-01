@@ -97,6 +97,11 @@ public interface TextFilter
 	{
 		GList<TextComponent> cs = new GList<TextComponent>();
 		char s = CC.COLOR_CHAR;
+
+		if (src == null || src.length() == 0) {
+			return new TextComponent[0];
+		}
+
 		char[] v = src.toCharArray();
 		boolean skip = false;
 		String buffer = "";
