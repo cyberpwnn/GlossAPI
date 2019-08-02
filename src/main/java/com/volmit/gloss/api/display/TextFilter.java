@@ -90,7 +90,7 @@ public interface TextFilter
 			}
 		}
 
-		return m;
+		return m.replace(Character.MAX_VALUE, '&');
 	}
 
 	public static TextComponent[] extract(String src)
@@ -101,6 +101,8 @@ public interface TextFilter
 		if (src == null || src.length() == 0) {
 			return new TextComponent[0];
 		}
+
+		src = src.replace("\\&", Character.MAX_VALUE + "");
 
 		char[] v = src.toCharArray();
 		boolean skip = false;
