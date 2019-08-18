@@ -194,7 +194,8 @@ public class VectorMath
 
 	private static double round(double value, int precision)
 	{
-		return Double.valueOf(F.f(value, precision));
+		int scale = (int) Math.pow(10, precision);
+		return (double) Math.round(value * scale) / scale;
 	}
 
 	public static Vector clip(Vector v, int decimals)
