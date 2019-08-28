@@ -49,7 +49,7 @@ public interface Display extends PivotDisplay
 
 	public void destroy();
 
-	public void justClicked();
+	public boolean justClicked();
 
 	public void pivot(Player player);
 
