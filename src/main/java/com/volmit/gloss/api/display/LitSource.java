@@ -2,76 +2,42 @@ package com.volmit.gloss.api.display;
 
 import org.bukkit.Location;
 
-public class LitSource
-{
-	private Location current;
-	private ILighter lighter;
-	private int level;
+public class LitSource {
+    private int level;
+    private Location current;
+    private final ILighter lighter;
 
-	public LitSource(Location initial, ILighter lighter, int level)
-	{
-		this.current = initial.clone();
-		this.lighter = lighter;
-		this.level = level;
-	}
+    public LitSource(Location initial, ILighter lighter, int level) {
+        this.current = initial.clone();
+        this.lighter = lighter;
+        this.level = level;
+    }
 
-	public int getLevel()
-	{
-		return level;
-	}
+    public int getLevel() {
+        return level;
+    }
 
-	public void setLevel(int level)
-	{
-		this.level = level;
+    public void setLevel(int level) {
+        this.level = level;
 
-		if (this.current == null || this.current.getWorld() == null || this.current.getChunk() == null) {
-			return;
-		}
+        if (current == null) return;
 
-		if(level > 0)
-		{
-			lighter.unlight(current);
-			lighter.light(current, getLevel());
-			lighter.refresh(current.getChunk());
-		}
+        lighter.setLight(current, level);
+        lighter.refresh(current);
+    }
 
-		else
-		{
-			lighter.unlight(current);
-			lighter.refresh(current.getChunk());
-		}
-	}
+    public void unlight() {
+        setLevel(0);
+    }
 
-	public void unlight()
-	{
-		setLevel(0);
-	}
+    public void setPosition(Location newLocation) {
+        if (newLocation == null) return;
 
-	public void setPosition(Location newLocation)
-	{
-		if (newLocation == null || newLocation.getWorld() == null || newLocation.getChunk() == null) {
-			return;
-		}
+        if (current != null) lighter.unlight(current);
 
-		try
-		{
-			if (current != null && current.getWorld() != null && current.getChunk() != null) {
-				lighter.unlight(current);
-				lighter.refresh(current.getChunk());
-			}
+        current = newLocation.clone();
 
-			this.current = newLocation.clone();
-
-			if(level > 0)
-			{
-				lighter.light(current, getLevel());
-				lighter.refresh(current.getChunk());
-			}
-		}
-
-		catch(Throwable e)
-		{
-			e.printStackTrace();
-		}
-	}
+        if (level > 0) lighter.light(current, level);
+        lighter.refresh(current);
+    }
 }

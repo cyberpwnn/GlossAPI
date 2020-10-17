@@ -9,4 +9,6 @@ public interface TextComponent
 	public CC getColor();
 
 	public String get();
+
+	String mojangValue();
 }

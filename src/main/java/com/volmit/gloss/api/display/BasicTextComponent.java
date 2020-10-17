@@ -2,28 +2,27 @@ package com.volmit.gloss.api.display;
 
 import com.volmit.gloss.api.util.CC;
 
+import java.util.Objects;
+
 public class BasicTextComponent implements TextComponent
 {
 	private CC c;
 	private String t;
-	private boolean cc;
 
 	public BasicTextComponent(CC c)
 	{
-		cc = true;
 		this.c = c;
 	}
 
 	public BasicTextComponent(String t)
 	{
-		cc = false;
 		this.t = t;
 	}
 
 	@Override
 	public boolean isColor()
 	{
-		return cc;
+		return c != null;
 	}
 
 	@Override
@@ -44,51 +43,25 @@ public class BasicTextComponent implements TextComponent
 	}
 
 	@Override
-	public int hashCode()
-	{
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((c == null) ? 0 : c.hashCode());
-		result = prime * result + (cc ? 1231 : 1237);
-		result = prime * result + ((t == null) ? 0 : t.hashCode());
-		return result;
+	public String mojangValue() {
+		return isColor() ? c.mojangValue() : t;
 	}
 
 	@Override
-	public boolean equals(Object obj)
-	{
-		if(this == obj)
-		{
-			return true;
-		}
-		if(obj == null)
-		{
-			return false;
-		}
-		if(!(obj instanceof BasicTextComponent))
-		{
-			return false;
-		}
-		BasicTextComponent other = (BasicTextComponent) obj;
-		if(c != other.c)
-		{
-			return false;
-		}
-		if(cc != other.cc)
-		{
-			return false;
-		}
-		if(t == null)
-		{
-			if(other.t != null)
-			{
-				return false;
-			}
-		}
-		else if(!t.equals(other.t))
-		{
-			return false;
-		}
-		return true;
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		BasicTextComponent that = (BasicTextComponent) o;
+
+		if (!Objects.equals(c, that.c)) return false;
+		return Objects.equals(t, that.t);
+	}
+
+	@Override
+	public int hashCode() {
+		int result = c != null ? c.hashCode() : 0;
+		result = 31 * result + (t != null ? t.hashCode() : 0);
+		return result;
 	}
 }

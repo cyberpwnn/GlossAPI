@@ -7,18 +7,21 @@ import com.volmit.gloss.api.util.CC;
 
 import mortar.lang.collection.GList;
 
+import java.util.Arrays;
+import java.util.List;
+
 public interface TextFilter
 {
-	public String filter(Player p, boolean isClicking, Location l, TextComponent... components);
+	String filter(Player p, boolean isClicking, Location l, TextComponent... components);
 
-	public static boolean compression = true;
+	boolean compression = true;
 
-	public static String implode(GList<String> basex)
+	static String implode(GList<String> basex)
 	{
 		return compress(basex.toString(""));
 	}
 
-	public static GList<String> explode(String text)
+	static GList<String> explode(String text)
 	{
 		GList<String> s = new GList<>();
 		String stripped = CC.stripColor(text);
@@ -48,7 +51,7 @@ public interface TextFilter
 		return s;
 	}
 
-	public static String compress(String c)
+	static String compress(String c)
 	{
 		if(!compression)
 		{
@@ -58,7 +61,7 @@ public interface TextFilter
 		TextComponent[] f = extract(c);
 		CC lastColor = CC.WHITE;
 		CC lastFormat = null;
-		String m = "";
+		StringBuilder m = new StringBuilder();
 
 		for(TextComponent i : f)
 		{
@@ -69,7 +72,7 @@ public interface TextFilter
 					if(lastFormat == null || !lastFormat.equals(i.getColor()))
 					{
 						lastFormat = i.getColor();
-						m += lastFormat;
+						m.append(lastFormat);
 					}
 				}
 
@@ -79,24 +82,25 @@ public interface TextFilter
 					{
 						lastColor = i.getColor();
 						lastFormat = null;
-						m += lastColor;
+						m.append(lastColor.mojangValue());
 					}
 				}
 			}
 
 			else
 			{
-				m += i.get();
+				m.append(i.get());
 			}
 		}
 
-		return m.replace(Character.MAX_VALUE, '&');
+		return m.toString().replace(Character.MAX_VALUE, '&');
 	}
 
-	public static TextComponent[] extract(String src)
+    List<Character> HEX_CHARS = Arrays.asList('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'A', 'B', 'C', 'D', 'E', 'F');
+
+	static TextComponent[] extract(String src)
 	{
-		GList<TextComponent> cs = new GList<TextComponent>();
-		char s = CC.COLOR_CHAR;
+		GList<TextComponent> cs = new GList<>();
 
 		if (src == null || src.length() == 0) {
 			return new TextComponent[0];
@@ -105,54 +109,65 @@ public interface TextFilter
 		src = src.replace("\\&", Character.MAX_VALUE + "");
 
 		char[] v = src.toCharArray();
-		boolean skip = false;
-		String buffer = "";
-
+		StringBuilder buffer = new StringBuilder();
+		char character;
 		for(int i = 0; i < v.length; i++)
 		{
-			if(skip)
-			{
-				skip = false;
-				continue;
-			}
+			character = v[i];
 
-			if(v[i] == s)
+			if(character == CC.COLOR_CHAR)
 			{
-				if(!buffer.isEmpty())
+				if(buffer.length() > 0)
 				{
-					cs.add(new BasicTextComponent(buffer));
-					buffer = "";
+					cs.add(new BasicTextComponent(buffer.toString()));
+					buffer = new StringBuilder();
 				}
 
 				CC cv = CC.getByChar(v[i + 1]);
+				if (cv == null) continue;
 				cs.add(new BasicTextComponent(cv));
-				skip = true;
+				i++;
 			}
-
+            else if (character == '[') {
+                if (i + 7 < src.length()
+                        && HEX_CHARS.contains(src.charAt(i + 2))
+                        && HEX_CHARS.contains(src.charAt(i + 3))
+                        && HEX_CHARS.contains(src.charAt(i + 4))
+                        && HEX_CHARS.contains(src.charAt(i + 5))
+                        && HEX_CHARS.contains(src.charAt(i + 6))
+                        && HEX_CHARS.contains(src.charAt(i + 7))) {
+					if(buffer.length() > 0)
+					{
+						cs.add(new BasicTextComponent(buffer.toString()));
+						buffer = new StringBuilder();
+					}
+                    cs.add(new BasicTextComponent(CC.fromHex(src.substring(i + 1, i + 8))));
+                    i += 8;
+                }
+            }
 			else
 			{
-				buffer += v[i];
+				buffer.append(character);
 			}
 		}
 
-		if(!buffer.isEmpty())
+		if(buffer.length() > 0)
 		{
-			cs.add(new BasicTextComponent(buffer));
-			buffer = "";
-		}
+			cs.add(new BasicTextComponent(buffer.toString()));
+        }
 
-		return cs.toArray(new TextComponent[cs.size()]);
+		return cs.toArray(new TextComponent[0]);
 	}
 
-	public static String combine(TextComponent[] components)
+	static String combine(TextComponent[] components)
 	{
-		String c = "";
+		StringBuilder c = new StringBuilder();
 
 		for(TextComponent i : components)
 		{
-			c += i.get();
+			c.append(i.get());
 		}
 
-		return c;
+		return c.toString();
 	}
 }

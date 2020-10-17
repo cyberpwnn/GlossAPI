@@ -1,13 +1,13 @@
 package com.volmit.gloss.api.display;
 
-import org.bukkit.Chunk;
 import org.bukkit.Location;
 
-public interface ILighter
-{
-	public void light(Location l, int ll);
+public interface ILighter {
+    void light(Location location, int level);
 
-	public void unlight(Location l);
+    void unlight(Location location);
 
-	public void refresh(Chunk c);
+    void setLight(Location location, int level);
+
+    void refresh(Location location);
 }
